@@ -43,8 +43,8 @@ while (charTypeSelected ==false){
 //DRY. Add a function here to get all user choice options
 function getChoice(currentOption){
   var userChoice = "x";
-  messagePromt = " ";
-  var messagePromt = ("Would you like" .concat(currentOption));
+  messagePrompt = " ";
+  var messagePrompt = ("Would you like" .concat(currentOption));
   messagePrompt = messagePrompt.concat('characters (y/n)?');
 
   while (userChoice = "x") {
@@ -64,14 +64,17 @@ function getChoice(currentOption){
 
 if (lowerCaseChar) {
   pickedArray = pickedArray.concat(lowerCaseChar);
+}
 if (upperCaseChar){
     pickedArray = pickedArray.concat(upperCaseChar);
+}
 if (numChar){
   pickedArray = pickedArray.concat(numbers);
+}
 if (specialPick){
   pickedArray = pickedArray.concat(specialChar)
 }
-}
+
   }
 }
 
