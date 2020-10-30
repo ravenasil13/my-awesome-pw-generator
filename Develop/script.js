@@ -78,6 +78,18 @@ if (specialPick){
   }
 }
 
+var passwordString =" ";
+for (var i = 0; i <passwordLength; i++) {
+  passwordString += pickedArray[Math.floor(Math.random() * (pickedArray.length))];
+  }
+
+  return passwordString;
+
+}
+
+var generateBtn = document.querySelector("#gererate");
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
