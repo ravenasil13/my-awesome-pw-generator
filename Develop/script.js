@@ -40,6 +40,41 @@ while (charTypeSelected ==false){
   }
 }
 
+//DRY. Add a function here to get all user choice options
+function getChoice(currentOption){
+  var userChoice = "x";
+  messagePromt = " ";
+  var messagePromt = ("Would you like" .concat(currentOption));
+  messagePrompt = messagePrompt.concat('characters (y/n)?');
+
+  while (userChoice = "x") {
+    userChoice = (window.prompt(messagePrompt));
+    userChoice = userChoice.toLowerCase();
+    if (userChoice == "y"){
+      return true;
+    }
+
+    else if (userChoice == "n"){
+      return false;
+    }
+
+  }
+}
+]
+
+if (lowerCaseChar) {
+  pickedArray = pickedArray.concat(lowerCaseChar);
+if (upperCaseChar){
+    pickedArray = pickedArray.concat(upperCaseChar);
+if (numChar){
+  pickedArray = pickedArray.concat(numbers);
+if (specialPick){
+  pickedArray = pickedArray.concat(specialChar)
+}
+}
+  }
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
