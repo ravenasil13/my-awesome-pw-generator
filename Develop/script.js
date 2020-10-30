@@ -25,7 +25,7 @@ function generatePasswordLength() {
   return userChoice;
 }
 
-//Loop for user to pick at least one char type
+//Loop here for user to pick at least one char type
 while (charTypeSelected ==false){
   var lowerCaseChar = getChoice("lowercase");
   var upperCaseChar = getChoice("uppercase");
@@ -34,6 +34,9 @@ while (charTypeSelected ==false){
 
   if ((lowerCaseChar) || (upperCaseChar) || (numChar) || (specialPick)){
     charTypeSelected = true;
+  }
+  else {
+    window.alert("You must select at least one character type.")
   }
 }
 
