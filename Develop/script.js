@@ -87,7 +87,7 @@ for (var i = 0; i <passwordLength; i++) {
 
 }
 
-var generateBtn = document.querySelector("#gererate");
+var generateBtn = document.querySelector("#generate");
 
 
 // Write password to the #password input
