@@ -2,11 +2,11 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword (){
-var lowerCaseChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "t", "u", "v", "w", "x", "y", "z"]
-var upperCaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-var specialChar = ["@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"]
-var pickedArray =
+var lowerCaseChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "t", "u", "v", "w", "x", "y", "z"];
+var upperCaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var specialChar = ["@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
+var pickedArray = [];
 
 var passwordLength = generatePasswordLength ();
 
@@ -18,7 +18,7 @@ function generatePasswordLength() {
     userChoice =window.prompt("Enter a number of characters between 8 and 128: ");
 
     //If not a number, make user reset choice to 0
-    if (isNaN(userChoice)){
+    if (isNaN(userChoice)) {
       userChoice = 0;
     }
   }
@@ -27,12 +27,12 @@ function generatePasswordLength() {
 
 //Loop here for user to pick at least one char type
 while (charTypeSelected ==false){
-  var lowerCaseChar = getChoice("lowercase");
-  var upperCaseChar = getChoice("uppercase");
+  var lowerAlpha = getChoice("lowercase");
+  var upperAlpha = getChoice("uppercase");
   var numChar = getChoice("numeric");
   var specialPick = getChoice("special");
 
-  if ((lowerCaseChar) || (upperCaseChar) || (numChar) || (specialPick)){
+  if ((lowerAlpha) || (upperAlpha) || (numChar) || (specialPick)){
     charTypeSelected = true;
   }
   else {
@@ -43,7 +43,7 @@ while (charTypeSelected ==false){
 //DRY. Add a function here to get all user choice options
 function getChoice(currentOption){
   var userChoice = "x";
-  messagePrompt = " ";
+  messagePrompt = "";
   var messagePrompt = ("Would you like" .concat(currentOption));
   messagePrompt = messagePrompt.concat('characters (y/n)?');
 
@@ -54,38 +54,38 @@ function getChoice(currentOption){
       return true;
     }
 
-    else if (userChoice == "n"){
+    else if (userChoice == "n") {
       return false;
     }
 
   }
 }
-]
 
-if (lowerCaseChar) {
+
+if (lowerAlpha) {
   pickedArray = pickedArray.concat(lowerCaseChar);
 }
-if (upperCaseChar){
+if (upperAlpha){
     pickedArray = pickedArray.concat(upperCaseChar);
 }
 if (numChar){
   pickedArray = pickedArray.concat(numbers);
 }
 if (specialPick){
-  pickedArray = pickedArray.concat(specialChar)
+  pickedArray = pickedArray.concat(specialChar);
 }
 
   }
-}
 
-var passwordString =" ";
+
+var passwordString ="";
 for (var i = 0; i <passwordLength; i++) {
   passwordString += pickedArray[Math.floor(Math.random() * (pickedArray.length))];
-  }
+}
 
   return passwordString;
 
-}
+
 
 var generateBtn = document.querySelector("#generate");
 
